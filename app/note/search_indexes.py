@@ -1,6 +1,6 @@
 import datetime
 from haystack import indexes
-from .model import Note
+from .models import Note
 
 
 class NoteIndex(indexes.SearchIndex, indexes.Indexable):
