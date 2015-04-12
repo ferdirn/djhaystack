@@ -11,3 +11,13 @@ class IndexView(generic.ListView):
     def get_queryset(self):
         """ return latest notes """
         return Note.objects.filter(pub_date__lte=timezone.now()).order_by('-pub_date')
+
+
+class DetailView(generic.DetailView):
+    model = Note
+    template_name = 'note/detail.html'
+
+    def get_queryset(self):
+        """ return latest notes """
+        return Note.objects.filter(pub_date__lte=timezone.now())
+
