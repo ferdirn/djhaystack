@@ -1,0 +1,14 @@
+{% load static %}
+
+<h1>{{ note.title }}</h1>
+
+{% if error_message %}
+    <p><strong>{{ error_message }}</strong></p>
+{% endif %}
+
+<h3>by User on {{ note.pub_date }}</h3>
+
+{{ note.body }}
+
+<br\>
+<a href="{% url 'app.note:index' %}">Note index</a>
