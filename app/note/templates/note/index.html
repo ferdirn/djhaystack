@@ -1,0 +1,11 @@
+{% load staticfiles %}
+
+{% if latest_notes %}
+    <ul>
+        {% for note in latest_notes %}
+            <li><a href="{% url ''app.note:detail' note.id %}">{{ note.title }}</a></li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No notes are available.</p>
+{% endif %}
