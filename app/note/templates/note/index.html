@@ -3,9 +3,13 @@
 {% if latest_notes %}
     <ul>
         {% for note in latest_notes %}
-            <li><a href="{% url ''app.note:detail' note.id %}">{{ note.title }}</a></li>
+            <li><a href="{% url 'note:detail' note.id %}">{{ note.title }}</a></li>
         {% endfor %}
     </ul>
 {% else %}
     <p>No notes are available.</p>
 {% endif %}
+
+<p>
+    <a href="/search">Search</a>
+</p>
